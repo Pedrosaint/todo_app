@@ -11,7 +11,7 @@ const TodoApp: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState("");
 
-
+  // Load from localStorage on mount
   useEffect(() => {
     const storedTodos = localStorage.getItem("todos");
     if (storedTodos) setTodos(JSON.parse(storedTodos));
@@ -46,7 +46,7 @@ const TodoApp: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-4 bg-white shadow-lg rounded-lg">
+    <div className="max-w-md mx-auto mt-10 p-4 bg-white shadow-lg rounded-lg bg-gray-500">
       <h1 className="text-2xl font-bold mb-4">Todo App</h1>
 
       <div className="flex mb-4">
